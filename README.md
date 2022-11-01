@@ -2,33 +2,10 @@
 implement LL(1) parser to introduce three functions : nullable, first and follow beside building parsing table. Finally test the code 
 
 ### The grammar :
-PROGRAM → STMTS
+<img width="384" alt="Screen Shot 2022-11-01 at 7 28 48 PM" src="https://user-images.githubusercontent.com/68879499/199285634-693129a0-d4a2-4e3c-8341-24668a951e6c.png">
 
-STMTS → STMT| STMT ; STMTS
-
-STMT → id = EXPR
-
-EXPR → EXPR+TERM|EXPR-TERM|TERM
-
-TERM → TERM * POWER | TERM / POWER | POWER
-
-POWER →  POWER^FACTOR | FACTOR
-
-FACTOR → ( EXPR ) | id | INTEGER
-
-INTEGER → num | plus num | minus mun
 
 ### Re-write the grammar such that it can be parsed by an LL(1) parser :
-PROGRAM → STMTS
-STMTS → STMT S’
-S’ →   # |  ; STMTS
-STMT → id = EXPR
-EXPR → TERM E’
-E’ →  +TERM E’ |-TERM E’| #
-TERM →  POWER T’
-T’ →  * POWER T’ | / POWER T’ | #
-POWER →  FACTOR P’
-P’ →   ^FACTOR P’
-FACTOR → ( EXPR ) | id | INTEGER
-INTEGER → num | plus num | minus mun
+<img width="384" alt="Screen Shot 2022-11-01 at 7 29 09 PM" src="https://user-images.githubusercontent.com/68879499/199285703-3f199c12-dd87-4bf0-b4d5-9df5cd6900f8.png">
+
 
