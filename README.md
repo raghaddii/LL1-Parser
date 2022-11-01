@@ -3,12 +3,19 @@ implement LL(1) parser to introduce three functions : nullable, first and follow
 
 ### The grammar :
 PROGRAM → STMTS
+
 STMTS → STMT| STMT ; STMTS
+
 STMT → id = EXPR
+
 EXPR → EXPR+TERM|EXPR-TERM|TERM
+
 TERM → TERM * POWER | TERM / POWER | POWER
+
 POWER →  POWER^FACTOR | FACTOR
+
 FACTOR → ( EXPR ) | id | INTEGER
+
 INTEGER → num | plus num | minus mun
 
 ### Re-write the grammar such that it can be parsed by an LL(1) parser :
