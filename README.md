@@ -10,5 +10,7 @@ implement LL(1) parser to introduce three functions : nullable, first and follow
 
 ### The code :
 the main classes..
+
 Grammar class: receive input.txt as grammar the produce output.txt as functions table and parse table.
+
 Test class: write input string in the main class then print if is accepted by LL(1) or not.
